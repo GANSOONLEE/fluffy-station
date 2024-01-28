@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile-frontend
+    ports:
+      - '3000:3000'
+    # depends_on:
+      # - backend
+    volumes:
+      - ./frontend:/app
+      # - /app/node_modules/
+
+  # backend:
+  #   build:
+  #     content:
+  #     dockerfile: 
+  #   ports:
+  #     - '4000:4000'
+  #   environment:
+  #     - DATABASE_URL=
+
+  # database:
+  #   build:
+  #     content:
+  #     dockerfile: 
+  #   ports:
+  #     - '5432:5432'
+  #   environment:
+  #     - POSTGRES_DB= # database-name
+  #     - POSTGRES_USER = # database-user
+  #     - POSTGRES_PASSWORD = # database-password
